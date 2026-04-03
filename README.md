@@ -4,8 +4,8 @@ This repository contains the .bash scripts to recapulate the TBSS results render
 The included scripts account for a subset of performed processing scripts
 
 1) Preprocessing_Mrtrix: takes raw files, performs preprocessing
-2) DTIFIT:_________
-3) make RD:______
+2) DTI: create tensor files and required FA, MD, AD files for each participant
+3) create_RD: average over 2nd and 3rd eigenvalue from DTI output to ge RD file
 4) registertoanatomical: preprares transformation matrices between anatomical and diffusion space
 5) transform_lesion: apply transformation matrix on lesion mask to acquire lesion mask in diffusion space
 6) tbss_part1: perform tbss specific preprocessing to render FA skeleton for further processing
