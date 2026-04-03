@@ -4,6 +4,7 @@
 path_gen="/mnt/e/Lilith/my_dataset_better_BIDS"  
 WF_DIR="${path_gen}/derivatives"
 TBSS_DIR="${WF_DIR}/tbss_no_bad_cut"
+#TBSS_DIR="${WF_DIR}/tbss_no_cut_strict #### used in reduced sample
 
 # List of subject
 participants=($(basename -a $path_gen/derivatives/dti/sub-*)) 
@@ -17,7 +18,7 @@ PATIENTS=("sub-001" "sub-002" "sub-003" "sub-004" "sub-005" "sub-008" "sub-016" 
 # participants=()
 # for sub in "${WF_DIR}/dti"/sub-*; do
     # ptc=$(basename "$sub")
-    # [[  ${EXCLUDE[*]}  =~ ${ptc} ]] && continue  
+    # [[  "${EXCLUDE[*]}"  =~ "${ptc}" ]] && continue  
     # participants+=("$ptc")  
 # done
 
