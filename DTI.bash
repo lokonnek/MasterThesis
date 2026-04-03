@@ -4,7 +4,7 @@
 path_gen="/mnt/e/Lilith/my_dataset_better_BIDS"
 
 # Store all existing participant directories in an array
-participants=($path_gen/derivatives/preprocessing_Mrtrix/sub-*)  # _____________________________________________________for loop
+participants=($path_gen/derivatives/preprocessing_Mrtrix/sub-*)  #  loop over participants
 #participants=($path_gen/derivatives/preprocessing/sub-001)  # trial run for one subject only
 
 # If no participants are found, exit the script
@@ -21,10 +21,8 @@ for ptc in "${participants[@]}"; do
   sub_id=$(basename "$ptc")
   #sub_id="sub-001"
   
-  # Set the correct file paths
-  #file when eddy output used
 
-  #file when fast output used
+  #file paths
   dwi_file="$path_gen/derivatives/preprocessing_Mrtrix/${sub_id}/${sub_id}_dwi_bias_corrected.nii.gz"
   bvec_file="$path_gen/${sub_id}/dwi/${sub_id}_dir-AP_dwi.bvec"
   bval_file="$path_gen/${sub_id}/dwi/${sub_id}_dir-AP_dwi.bval"
