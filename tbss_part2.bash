@@ -4,7 +4,8 @@ set -e
 # paths
 path_gen="/mnt/e/Lilith/my_dataset_better_BIDS"
 wf_dir="${path_gen}/derivatives"
-tbss_dir="${path_gen}/derivatives/tbss_no_cuts"
+tbss_dir="${path_gen}/derivatives/tbss_no_4_20_38"
+#tbss_dir="${path_gen}/derivatives/tbss_no_cuts" #### case of reduced sample
 randomise_folder="randomise"
 mkdir -p ${randomise_folder}
 
@@ -153,9 +154,9 @@ done
 
 # ===Randomise ===
 iters=5000
-metrics=("FA" "MD" "L1"  "RD" "MO")
-cons=("output_con1")
-vxl=-8
+metrics=("FA" "MD" "L1"  "RD")
+cons=("output_con1") ### alter according to setup_masks output
+vxl=-8 ### alter according to setup_masks output
 
 
 for metric in "${metrics[@]}"; do
